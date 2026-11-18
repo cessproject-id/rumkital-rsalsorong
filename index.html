@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumkital dr. R. Oetojo Sorong - Dharma Husada Rumeksa</title>
+    <!-- Font & Icons -->
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --navy-dark: #0f2347;
+            --navy-primary: #1b3668;
+            --blue-accent: #0077b6;
+            --gold-accent: #f4c430;
+            --gold-hover: #ddb022;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(15, 35, 71, 0.08);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--navy-dark);
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 8px 0;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar i {
+            color: var(--gold-accent);
+            margin-right: 6px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--navy-dark);
+        }
+
+        .logo-brand img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo-text h1 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--navy-primary);
+        }
+
+        .logo-text span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-accent);
+        }
+
+        .nav-links .btn-nav {
+            background: var(--navy-primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .nav-links .btn-nav:hover {
+            background: var(--navy-dark);
+            color: var(--gold-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy-primary);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 60%, var(--blue-accent) 100%);
+            color: var(--white);
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+        }
+
+        .badge-hero {
+            display: inline-block;
+            background: rgba(244, 196, 48, 0.2);
+            border: 1px solid var(--gold-accent);
+            color: var(--gold-accent);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gold-accent);
+            color: var(--navy-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy-dark);
+        }
+
+        /* General Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--blue-accent);
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 1.2px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 14px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 45px auto;
+        }
+
+        /* Tentang & Visi Misi */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .stat-item h3 {
+            color: var(--navy-primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .visi-misi-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--gold-accent);
+            padding: 32px;
+        }
+
+        .visi-box {
+            background: #eff6ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--navy-primary);
+            margin-bottom: 24px;
+        }
+
+        .visi-box h3, .misi-box h3 {
+            color: var(--navy-primary);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .visi-box p {
+            font-weight: 600;
+            color: var(--navy-dark);
+            font-style: italic;
+        }
+
+        .misi-list {
+            padding-left: 20px;
+            color: var(--text-dark);
+        }
+
+        .misi-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Pejabat RS */
+        .karumkital-card {
+            display: flex;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            max-width: 850px;
+            margin: 0 auto 45px auto;
+            border: 1px solid #e2e8f0;
+        }
+
+        .karumkital-img img {
+            width: 260px;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .karumkital-info {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .role-badge {
+            display: inline-block;
+            background: var(--navy-primary);
+            color: var(--gold-accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        .karumkital-info h3 {
+            font-size: 1.5rem;
+            color: var(--navy-dark);
+        }
+
+        .karumkital-info .nrp {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .karumkital-info blockquote {
+            color: var(--text-dark);
+            font-style: italic;
+            border-left: 3px solid var(--gold-accent);
+            padding-left: 15px;
+        }
+
+        .pejabat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .pejabat-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .pejabat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pejabat-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .pejabat-body {
+            padding: 20px;
+        }
+
+        .pejabat-body .jabatan {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--blue-accent);
+            margin-bottom: 6px;
+        }
+
+        .pejabat-body h4 {
+            color: var(--navy-dark);
+            font-size: 1.05rem;
+        }
+
+        /* Poliklinik */
+        .poli-filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 1px solid #cbd5e1;
+            background: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--navy-primary);
+            color: var(--white);
+            border-color: var(--navy-primary);
+        }
+
+        .poli-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .poli-card {
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .poli-card:hover {
+            border-color: var(--blue-accent);
+            transform: translateY(-4px);
+        }
+
+        .poli-icon {
+            width: 50px;
+            height: 50px;
+            background: #eff6ff;
+            color: var(--navy-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .poli-card h3 {
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+        }
+
+        .poli-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .poli-schedule {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: #fef9c3;
+            color: #854d0e;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+
+        /* Artikel & Kegiatan */
+        .artikel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .artikel-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .artikel-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .artikel-body {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .artikel-date {
+            font-size: 0.8rem;
+            color: var(--blue-accent);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .artikel-body h3 {
+            font-size: 1.15rem;
+            color: var(--navy-dark);
+            margin-bottom: 10px;
+        }
+
+        .artikel-body p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+
+        .btn-read {
+            background: none;
+            border: none;
+            color: var(--navy-primary);
+            font-weight: 700;
+            cursor: pointer;
+            text-align: left;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+
+        .btn-read:hover {
+            color: var(--blue-accent);
+        }
+
+        /* Kontak & Maps */
+        .kontak-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .info-list {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            background: var(--navy-primary);
+            color: var(--gold-accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-item h4 {
+            color: var(--navy-dark);
+            margin-bottom: 3px;
+        }
+
+        .info-item p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .map-box {
+            min-height: 380px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy-dark);
+            color: #cbd5e1;
+            padding-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand img {
+            width: 60px;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .footer-links h4 {
+            color: var(--gold-accent);
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            background: #09162e;
+            text-align: center;
+            padding: 18px 0;
+            font-size: 0.85rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--white);
+            max-width: 650px;
+            width: 100%;
+            border-radius: var(--radius);
+            padding: 28px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .modal-date {
+            font-size: 0.85rem;
+            color: var(--blue-accent);
+            font-weight: 700;
+        }
+
+        .modal-content h2 {
+            margin: 8px 0 15px 0;
+            color: var(--navy-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .about-grid, .kontak-wrapper, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .karumkital-card {
+                flex-direction: column;
+            }
+
+            .karumkital-img img {
+                width: 100%;
+                height: 300px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar Informasi Darurat -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span><i class="fas fa-ambulance"></i> IGD 24 Jam: <strong>(0951) 321-XXX / 0811-XXXX-XXXX</strong></span>
+            <span><i class="fas fa-map-marker-alt"></i> Jl. Ahmad Yani, Kota Sorong, Papua Barat Daya</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#beranda" class="logo-brand">
+                <img src="logo.png" alt="Logo Rumkital dr. R. Oetojo">
+                <div class="logo-text">
+                    <h1>RUMKITAL dr. R. OETOJO</h1>
+                    <span>Dharma Husada Rumeksa • Sorong</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#beranda">Beranda</a>
+                <a href="#tentang">Profil & Visi Misi</a>
+                <a href="#pejabat">Pejabat RS</a>
+                <a href="#layanan">Poliklinik</a>
+                <a href="#artikel">Berita & Kegiatan</a>
+                <a href="#kontak" class="btn-nav">Kontak & Lokasi</a>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <div class="container hero-content">
+            <span class="badge-hero">TNI ANGKATAN LAUT • PAPUA BARAT DAYA</span>
+            <h2>Melayani dengan Hati, Mengabdi untuk Kesehatan Prajurit & Masyarakat</h2>
+            <p>Rumah Sakit Angkatan Laut dr. R. Oetojo Sorong hadir memberikan pelayanan kesehatan yang bermutu, aman, profesional, dan terjangkau bagi seluruh lapisan masyarakat Papua Barat Daya.</p>
+            <div class="hero-buttons">
+                <a href="#layanan" class="btn btn-primary"><i class="fas fa-stethoscope"></i> Lihat Layanan Poli</a>
+                <a href="#kontak" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengenalan & Visi Misi -->
+    <section id="tentang" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-tag">TENTANG KAMI</span>
+                    <h2 class="section-title">Pengenalan Rumkital dr. R. Oetojo Sorong</h2>
+                    <p><strong>Rumkital dr. R. Oetojo</strong> merupakan fasilitas pelayanan kesehatan di bawah jajaran TNI Angkatan Laut yang berlokasi di Kota Sorong, Provinsi Papua Barat Daya. Berlandaskan semangat <em>"Dharma Husada Rumeksa"</em>, kami berkomitmen menjadi garda terdepan dalam dukungan kesehatan operasional TNI AL sekaligus rujukan pelayanan medis terpercaya bagi masyarakat umum.</p>
+                    <p>Didukung oleh tenaga medis spesialis, perawat profesional, serta sarana prasarana yang terus ditingkatkan, kami mengutamakan keselamatan dan kepuasan setiap pasien yang datang berobat.</p>
+                    
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <h3>24 Jam</h3>
+                            <p>Layanan IGD & Ambulans</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>12+</h3>
+                            <p>Poliklinik Spesialis & Umum</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>BPJS & Umum</h3>
+                            <p>Melayani Seluruh Masyarakat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visi & Misi Card -->
+                <div class="visi-misi-card">
+                    <div class="visi-box">
+                        <h3><i class="fas fa-eye"></i> Visi Rumkital dr. R. Oetojo</h3>
+                        <p>"Menjadi Rumah Sakit Kebanggaan yang Terpercaya Serta Terjangkau oleh Prajurit, PNS, dan Keluarga TNI Serta Seluruh Masyarakat Papua Barat Daya"</p>
+                    </div>
+
+                    <div class="misi-box">
+                        <h3><i class="fas fa-bullseye"></i> Misi Rumkital dr. R. Oetojo</h3>
+                        <ol class="misi-list">
+                            <li>Menyelenggarakan pelayanan kesehatan yang bermutu, aman, profesional, dan berorientasi pada keselamatan serta kepuasan pasien;</li>
+                            <li>Mewujudkan pelayanan kesehatan yang mudah diakses, adil, dan terjangkau bagi seluruh lapisan masyarakat Papua Barat Daya;</li>
+                            <li>Meningkatkan kompetensi, profesionalisme, dan kesejahteraan Sumber Daya Manusia (SDM) rumah sakit secara berkelanjutan;</li>
+                            <li>Mewujudkan tata kelola rumah sakit yang transparan, efektif, efisien, akuntabel, dan berbasis teknologi informasi; dan</li>
+                            <li>Meningkatkan sarana prasarana yang terorientasi pada mutu dan keselamatan pasien.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Karumkital & Pejabat -->
+    <section id="pejabat" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">STRUKTUR PIMPINAN</span>
+                <h2 class="section-title">Profil Karumkital & Pejabat Utama</h2>
+                <p class="section-subtitle">Jajaran pimpinan yang berdedikasi dalam memajukan pelayanan kesehatan di Rumkital dr. R. Oetojo Sorong.</p>
+            </div>
+
+            <!-- Karumkital Highlight -->
+            <div class="karumkital-card">
+                <div class="karumkital-img">
+                    <img src="https://placehold.co/400x450/1e3a8a/ffffff?text=Foto+Karumkital" alt="Karumkital dr. R. Oetojo">
+                </div>
+                <div class="karumkital-info">
+                    <span class="role-badge">KEPALA RUMAH SAKIT (KARUMKITAL)</span>
+                    <h3>Letkol Laut (K) dr. [Nama Lengkap], Sp.[Gelar]</h3>
+                    <p class="nrp">NRP. XXXXX/P</p>
+                    <blockquote>
+                        "Dengan semangat Dharma Husada Rumeksa, kami berkomitmen memberikan pelayanan kesehatan terbaik, humanis, dan profesional bagi keluarga besar TNI maupun seluruh masyarakat di Tanah Papua Barat Daya."
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Grid Pejabat Lainnya -->
+            <div class="pejabat-grid">
+                <div class="pejabat-card">
+                    <img src="https://placehold.co/300x300/e2e8f0/1e3a8a?text=Foto+Pejabat" alt="Kabag Yanmed">
+                    <div class="pejabat-body">
+                        <span class="jabatan">Kepala Bagian Pelayanan Medis</span>
+                        <h4>Mayor Laut (K) dr. [Nama Pejabat]</h4>
+                    </div>
+                </div>
+                <div class="pejabat-card">
+                    <img src="https://placehold.co/300x300/e2e8f0/1e3a8a?text=Foto+Pejabat" alt="Kabag Dukkes">
+                    <div class="pejabat-body">
+                        <span class="jabatan">Kepala Bagian Dukungan Kesehatan</span>
+                        <h4>Mayor Laut (K) [Nama Pejabat], S.Kep.</h4>
+                    </div>
+                </div>
+                <div class="pejabat-card">
+                    <img src="https://placehold.co/300x300/e2e8f0/1e3a8a?text=Foto+Pejabat" alt="Kabag Minlog">
+                    <div class="pejabat-body">
+                        <span class="jabatan">Kepala Bagian Administrasi & Logistik</span>
+                        <h4>Kapten Laut (K) [Nama Pejabat], S.Farm.</h4>
+                    </div>
+                </div>
+                <div class="pejabat-card">
+                    <img src="https://placehold.co/300x300/e2e8f0/1e3a8a?text=Foto+Pejabat" alt="Ketua Komite Medik">
+                    <div class="pejabat-body">
+                        <span class="jabatan">Ketua Komite Medik</span>
+                        <h4>dr. [Nama Dokter], Sp.PD</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poliklinik & Layanan -->
+    <section id="layanan" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">LAYANAN MEDIS</span>
+                <h2 class="section-title">Poliklinik & Fasilitas Kesehatan</h2>
+                <p class="section-subtitle">Pilih kategori layanan di bawah ini untuk melihat jadwal dan detail poliklinik yang tersedia.</p>
+            </div>
+
+            <!-- Filter Poli -->
+            <div class="poli-filters">
+                <button class="filter-btn active" data-filter="all">Semua Layanan</button>
+                <button class="filter-btn" data-filter="spesialis">Poli Spesialis</button>
+                <button class="filter-btn" data-filter="umum">Poli Umum & Gigi</button>
+                <button class="filter-btn" data-filter="penunjang">Penunjang Medis</button>
+            </div>
+
+            <!-- Grid Poli -->
+            <div class="poli-grid" id="poli-grid"></div>
+        </div>
+    </section>
+
+    <!-- Artikel & Kegiatan RS -->
+    <section id="artikel" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">BERITA & DOKUMENTASI</span>
+                <h2 class="section-title">Kegiatan & Artikel Kesehatan</h2>
+                <p class="section-subtitle">Informasi terkini mengenai kegiatan bakti sosial, penyuluhan kesehatan, dan aktivitas Rumkital dr. R. Oetojo.</p>
+            </div>
+
+            <div class="artikel-grid" id="artikel-grid"></div>
+        </div>
+    </section>
+
+    <!-- Kontak & Lokasi -->
+    <section id="kontak" class="section">
+        <div class="container">
+            <div class="kontak-wrapper">
+                <div class="kontak-info">
+                    <span class="section-tag">HUBUNGI KAMI</span>
+                    <h2 class="section-title">Lokasi & Informasi Kontak</h2>
+                    <p>Silakan hubungi kami untuk informasi jadwal dokter, pendaftaran pasien, atau layanan gawat darurat.</p>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Alamat Rumah Sakit</h4>
+                                <p>Jl. Ahmad Yani, Klademak, Kec. Sorong, Kota Sorong, Papua Barat Daya 98414</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fas fa-phone-volume"></i></div>
+                            <div>
+                                <h4>Telepon & IGD 24 Jam</h4>
+                                <p>IGD: (0951) 321-XXX | Informasi: 0811-XXXX-XXXX</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Jam Operasional Poliklinik</h4>
+                                <p>Senin – Jumat: 08.00 – 14.00 WIT<br>IGD & Rawat Inap: Buka 24 Jam</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email & Media Sosial</h4>
+                                <p>humas@rumkitaloetojo.mil.id | IG: @rumkital_dr_r_oetojo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed Sorong -->
+                <div class="map-box">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Rumkital%20dr.%20R.%20Oetojo%20Sorong&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Logo Rumkital">
+                <h3>RUMKITAL dr. R. OETOJO</h3>
+                <p>Dharma Husada Rumeksa — Melayani dengan profesional, aman, dan terjangkau bagi Prajurit, PNS, Keluarga TNI, serta seluruh masyarakat Papua Barat Daya.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#tentang">Visi & Misi</a></li>
+                    <li><a href="#pejabat">Profil Pejabat</a></li>
+                    <li><a href="#layanan">Jadwal Poliklinik</a></li>
+                    <li><a href="#artikel">Berita & Kegiatan</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan Utama</h4>
+                <ul>
+                    <li><a href="#layanan">Instalasi Gawat Darurat (24 Jam)</a></li>
+                    <li><a href="#layanan">Poli Penyakit Dalam & Anak</a></li>
+                    <li><a href="#layanan">Poli Bedah & Kebidanan</a></li>
+                    <li><a href="#layanan">Medical Check Up (MCU)</a></li>
+                    <li><a href="#layanan">Farmasi & Laboratorium</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rumkital dr. R. Oetojo Sorong - TNI Angkatan Laut. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Baca Artikel -->
+    <div class="modal" id="artikel-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <img id="modal-img" src="" alt="Foto Kegiatan">
+            <span class="modal-date" id="modal-date"></span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-body"></p>
+        </div>
+    </div>
+
+    <script>
+        // 1. Toggle Menu Mobile
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // 2. Data Poliklinik (Edit/tambah daftar poli di sini)
+        const dataPoli = [
+            {
+                nama: "Poli Penyakit Dalam",
+                kategori: "spesialis",
+                icon: "fa-heartbeat",
+                deskripsi: "Penanganan penyakit organ dalam, hipertensi, diabetes melitus, dan gangguan pencernaan.",
+                jadwal: "Senin - Kamis | 08.30 - 13.00 WIT"
+            },
+            {
+                nama: "Poli Kesehatan Anak",
+                kategori: "spesialis",
+                icon: "fa-baby",
+                deskripsi: "Pemeriksaan kesehatan bayi, anak, remaja, serta layanan tumbuh kembang dan imunisasi.",
+                jadwal: "Senin - Jumat | 09.00 - 13.00 WIT"
+            },
+            {
+                nama: "Poli Bedah Umum",
+                kategori: "spesialis",
+                icon: "fa-user-md",
+                deskripsi: "Konsultasi tindakan pembedahan, perawatan luka pasca operasi, dan bedah minor.",
+                jadwal: "Selasa & Kamis | 09.00 - 13.00 WIT"
+            },
+            {
+                nama: "Poli Kebidanan & Kandungan",
+                kategori: "spesialis",
+                icon: "fa-female",
+                deskripsi: "Pemeriksaan kehamilan (USG), program kehamilan, dan kesehatan reproduksi wanita.",
+                jadwal: "Senin, Rabu, Jumat | 09.00 - 13.00 WIT"
+            },
+            {
+                nama: "Poli Umum",
+                kategori: "umum",
+                icon: "fa-stethoscope",
+                deskripsi: "Pelayanan kesehatan dasar, konsultasi medis umum, dan surat keterangan sehat.",
+                jadwal: "Senin - Jumat | 08.00 - 14.00 WIT"
+            },
+            {
+                nama: "Poli Gigi & Mulut",
+                kategori: "umum",
+                icon: "fa-tooth",
+                deskripsi: "Perawatan gigi, pembersihan karang gigi (scaling), penambalan, dan pencabutan gigi.",
+                jadwal: "Senin - Jumat | 08.00 - 13.30 WIT"
+            },
+            {
+                nama: "Instalasi Gawat Darurat (IGD)",
+                kategori: "penunjang",
+                icon: "fa-ambulance",
+                deskripsi: "Penanganan kasus gawat darurat medis dan kecelakaan dengan tim siaga 24 jam.",
+                jadwal: "Buka 24 Jam Setiap Hari"
+            },
+            {
+                nama: "Laboratorium & Radiologi",
+                kategori: "penunjang",
+                icon: "fa-microscope",
+                deskripsi: "Pemeriksaan darah lengkap, kimia klinik, rontgen, dan penunjang diagnostik akurat.",
+                jadwal: "Buka 24 Jam (Pelayanan Cito)"
+            }
+        ];
+
+        const poliGrid = document.getElementById('poli-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        function renderPoli(filter = 'all') {
+            poliGrid.innerHTML = '';
+            const filtered = filter === 'all' ? dataPoli : dataPoli.filter(p => p.kategori === filter);
+
+            filtered.forEach(poli => {
+                poliGrid.innerHTML += `
+                    <div class="poli-card">
+                        <div class="poli-icon"><i class="fas ${poli.icon}"></i></div>
+                        <h3>${poli.nama}</h3>
+                        <p>${poli.deskripsi}</p>
+                        <span class="poli-schedule"><i class="far fa-clock"></i> ${poli.jadwal}</span>
+                    </div>
+                `;
+            });
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderPoli(btn.dataset.filter);
+            });
+        });
+
+        renderPoli();
+
+        // 3. Data Artikel & Kegiatan RS (Edit/tambah berita kegiatan di sini)
+        const dataArtikel = [
+            {
+                id: 1,
+                judul: "Bakti Sosial Kesehatan & Pengobatan Gratis di Pesisir Sorong",
+                tanggal: "12 November 2026",
+                gambar: "https://placehold.co/600x400/1b3668/ffffff?text=Bakti+Sosial+Kesehatan",
+                ringkasan: "Rumkital dr. R. Oetojo menggelar pelayanan pengobatan gratis dan penyuluhan gizi bagi masyarakat pesisir Kota Sorong.",
+                isiLengkap: "Dalam rangka meningkatkan derajat kesehatan masyarakat Papua Barat Daya, tim medis Rumkital dr. R. Oetojo Sorong melaksanakan kegiatan bakti sosial berupa pemeriksaan kesehatan umum, pemeriksaan gigi, serta pemberian vitamin gratis bagi warga pesisir. Kegiatan ini mendapat antusiasme tinggi dari masyarakat setempat dan merupakan wujud nyata pengabdian TNI AL."
+            },
+            {
+                id: 2,
+                judul: "Simulasi Penanggulangan Kebakaran & Evakuasi Pasien (Code Red)",
+                tanggal: "28 Oktober 2026",
+                gambar: "https://placehold.co/600x400/0077b6/ffffff?text=Simulasi+Keselamatan+RS",
+                ringkasan: "Seluruh staf medis dan non-medis mengikuti pelatihan tanggap darurat untuk menjamin mutu dan keselamatan pasien.",
+                isiLengkap: "Sesuai dengan misi rumah sakit dalam mengutamakan mutu dan keselamatan pasien, Rumkital dr. R. Oetojo rutin mengadakan simulasi tanggap darurat bencana dan kebakaran (Code Red). Pelatihan ini memastikan setiap personel memahami jalur evakuasi pasien serta penggunaan alat pemadam api ringan dengan cepat dan tepat."
+            },
+            {
+                id: 3,
+                judul: "Peningkatan Fasilitas Ruang Rawat Inap & Sistem Antrean Digital",
+                tanggal: "10 Oktober 2026",
+                gambar: "https://placehold.co/600x400/0f2347/f4c430?text=Inovasi+Layanan+Digital",
+                ringkasan: "Modernisasi tata kelola rumah sakit berbasis teknologi informasi untuk mempermudah akses pendaftaran pasien.",
+                isiLengkap: "Rumkital dr. R. Oetojo terus berbenah mewujudkan tata kelola rumah sakit yang transparan dan berbasis teknologi informasi. Pembaruan sistem pendaftaran pasien serta peremajaan ruang perawatan dilakukan agar prajurit, keluarga besar TNI, dan masyarakat umum mendapatkan kenyamanan maksimal saat berobat."
+            }
+        ];
+
+        const artikelGrid = document.getElementById('artikel-grid');
+        const modal = document.getElementById('artikel-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        dataArtikel.forEach(art => {
+            artikelGrid.innerHTML += `
+                <article class="artikel-card">
+                    <img src="${art.gambar}" alt="${art.judul}">
+                    <div class="artikel-body">
+                        <span class="artikel-date"><i class="far fa-calendar-alt"></i> ${art.tanggal}</span>
+                        <h3>${art.judul}</h3>
+                        <p>${art.ringkasan}</p>
+                        <button class="btn-read" onclick="bukaArtikel(${art.id})">Baca Selengkapnya <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </article>
+            `;
+        });
+
+        function bukaArtikel(id) {
+            const art = dataArtikel.find(item => item.id === id);
+            if (!art) return;
+
+            document.getElementById('modal-img').src = art.gambar;
+            document.getElementById('modal-date').textContent = art.tanggal;
+            document.getElementById('modal-title').textContent = art.judul;
+            document.getElementById('modal-body').textContent = art.isiLengkap;
+            modal.style.display = 'flex';
+        }
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
